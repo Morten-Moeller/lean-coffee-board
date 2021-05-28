@@ -7,7 +7,7 @@
 GET {{baseUrl}}/api/cards
 
 ### GET /api/cards/:id
-GET {{baseUrl}}/api/cards/0
+GET {{baseUrl}}/api/cards/60b0fa423fe337f332202436
 
 ### GET /api/cards/2000 (should not be found)
 GET {{baseUrl}}/api/cards/2000
@@ -22,8 +22,8 @@ Content-Type: application/json
   "votes": 42
 }
 
-### PATCH /api/cards/1
-PATCH {{baseUrl}}/api/cards/1
+### PATCH /api/cards/60b0fa423fe337f332202436
+PATCH {{baseUrl}}/api/cards/60b0fa423fe337f332202436
 Content-Type: application/json
 
 {
