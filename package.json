@@ -1,0 +1,24 @@
+{
+  "name": "lean-coffee-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "create-user": "node create-user.js 'Test User' 99 'test@testuser.com'",
+    "build:create-user": "npm run shebang:create-user && npm run chmod:create-user",
+    "shebang:create-user": "echo '#!/usr/bin/env node' > bin/create-user && cat create-user.js >> bin/create-user",
+    "chmod:create-user": "chmod +x bin/create-user",
+    "read-users": "node read-users.js",
+    "build:read-users": "npm run shebang:read-users && npm run chmod:read-users",
+    "shebang:read-users": "echo '#!/usr/bin/env node' > bin/read-users && cat read-users.js >> bin/read-users",
+    "chmod:read-users": "chmod +x bin/read-users",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.6.9",
+    "nodemon": "^2.0.7"
+  }
+}
