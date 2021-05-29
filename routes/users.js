@@ -3,8 +3,7 @@ const router = express.Router()
 const User = require('../models/User')
 
 router.get('/', async (req, res, next) => {
-  const users = await User.find()
-  res.json(users)
+  res.json(await User.find())
 })
 
 router.get('/:id', async (req, res, next) => {
@@ -18,14 +17,12 @@ router.post('/', async (req, res, next) => {
 
 router.patch('/:id', async (req, res, next) => {
   const { id } = req.params
-
   res.json(await User.findByIdAndUpdate(id, req.body, { new: true }))
 })
 
-router.delete('/:id', (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
   const { id } = req.params
-
-  res.sendStatus(204).json(User.findByIdAndDelete(id))
+  res.sendStatus(204).json(await User.findByIdAndDelete(id))
 })
 
 module.exports = router
