@@ -18,8 +18,9 @@ Content-Type: application/json
 
 {
   "name": "Max Mustermann",
-  "age": 42,
-  "email": "maxmustermann1979@gmx.de"
+  "age": 17,
+ "email": "maxmustermann1979@gmx.de"
+
 }
 
 ### PATCH /api/users/1

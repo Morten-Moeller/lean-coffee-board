@@ -1,0 +1,36 @@
+### Install the VSCode extension "REST Client"
+### (https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
+
+@baseUrl = http://localhost:4000
+
+### GET /cards
+GET {{baseUrl}}/api/cards
+
+### GET /api/cards/:id
+GET {{baseUrl}}/api/cards/60b2a121c95870fc6ba60ce7
+
+### GET /api/cards/2000 (should not be found)
+GET {{baseUrl}}/api/cards/2000
+
+### POST /api/cards
+POST http://localhost:4000/api/cards
+Content-Type: application/json
+
+{
+  "title": "Max Titel",
+  "author": "60af5f41009c6aec815842e1",
+  "votes": 42
+}
+
+### PATCH /api/cards/60b0fa423fe337f332202436
+PATCH {{baseUrl}}/api/cards/60b0fa423fe337f332202436
+Content-Type: application/json
+
+{
+  "title": "New test title",
+  "author": "Eva Musterfrau"
+}
+
+### DELETE /api/cards/1
+DELETE {{baseUrl}}/api/cards/1
+
