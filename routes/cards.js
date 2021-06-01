@@ -14,7 +14,13 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/', async (req, res, next) => {
-  res.status(201).json(await Card.create(req.body))
+  res
+    .status(201)
+    .json(
+      await (await Card.create(req.body))
+        .populate('author', 'name')
+        .execPopulate()
+    )
 })
 
 router.patch('/:id', async (req, res) => {

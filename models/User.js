@@ -5,7 +5,7 @@ const userSchema = {
   age: {
     type: Number,
     required: true,
-    validate: [val => val > 15, 'Age have to be atleast 16'],
+    min: [16, 'Age have to be at least 16'],
   },
   email: {
     type: String,
